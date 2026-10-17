@@ -24,4 +24,3 @@ Open `index.html` in a browser. Use the navigation links to switch pages.
 - [x] Wireframe and palette/font notes
 - [x] No CSS
 
-Remember to replace the placeholder email before sharing publicly.
