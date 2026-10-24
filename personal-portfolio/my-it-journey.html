@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,25 +7,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My IT Journey | David Sime</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
+    <header class="site-header">
         <h1>My Journey in Information Technology</h1>
-        <p>Learning, Growing, and Building My Future</p>
+        <p class="subtitle">
+            Learning, Growing, and Building My Future
+        </p>
 
         <nav aria-label="Page navigation">
-            <a href="#about">About Me</a> |
-            <a href="#interests">My Interests</a> |
-            <a href="#goals">My Goals</a> |
+            <a href="#about">About Me</a>
+            <a href="#interests">My Interests</a>
+            <a href="#goals">My Goals</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <main>
 
-        <section id="about">
+        <section id="about" class="content-card">
             <h2>About Me</h2>
 
             <p>
@@ -47,7 +51,7 @@
                 width="400">
         </section>
 
-        <section id="interests">
+        <section id="interests" class="content-card">
             <h2>My Interests in Technology</h2>
 
             <p>
@@ -56,7 +60,7 @@
                 Some of the topics that interest me include:
             </p>
 
-            <ul>
+            <ul class="skills-list">
                 <li>Web Development</li>
                 <li>Python Programming</li>
                 <li>Computer Networking</li>
@@ -64,7 +68,7 @@
                 <li>Data Analysis</li>
             </ul>
 
-            <article>
+            <article class="interest-card">
                 <h3>Why I Enjoy Web Development</h3>
                 <p>
                     I enjoy web development because it
@@ -74,7 +78,7 @@
                 </p>
             </article>
 
-            <article>
+            <article class="interest-card">
                 <h3>Why Networking Interests Me</h3>
                 <p>
                     Networking interests me because it
@@ -84,7 +88,7 @@
             </article>
         </section>
 
-        <section id="goals">
+        <section id="goals" class="content-card">
             <h2>My Educational and Career Goals</h2>
 
             <p>
@@ -106,7 +110,7 @@
             </ol>
         </section>
 
-        <section id="contact">
+        <section id="contact" class="content-card">
             <h2>Connect With Me</h2>
 
             <p>
@@ -115,7 +119,8 @@
             </p>
 
             <p>
-                <a href="https://github.com/David12505">
+                <a class="contact-button"
+                   href="https://github.com/David12505">
                     Visit My GitHub Profile
                 </a>
             </p>

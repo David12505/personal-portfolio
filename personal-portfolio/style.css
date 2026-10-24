@@ -1,0 +1,156 @@
+
+/* General page styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f5f9;
+    color: #243247;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Header */
+.site-header {
+    background-color: #142d4e;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 5px solid #ffac33;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 0 0 10px;
+}
+
+.subtitle {
+    color: #ffcc80;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border: 1px solid #ffac33;
+    border-radius: 6px;
+}
+
+nav a:hover {
+    background-color: #ffac33;
+    color: #142d4e;
+}
+
+/* Main content */
+main {
+    max-width: 950px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Section cards - Box model */
+.content-card {
+    background-color: white;
+    border: 1px solid #d5dce5;
+    border-left: 5px solid #ffac33;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* Heading styling */
+h2 {
+    color: #142d4e;
+    border-bottom: 2px solid #ffac33;
+    padding-bottom: 8px;
+    margin-top: 0;
+}
+
+h3 {
+    color: #25476b;
+}
+
+p {
+    margin: 12px 0;
+}
+
+/* Image - Box model */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #142d4e;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 20px auto;
+}
+
+/* Skills list */
+.skills-list {
+    padding-left: 25px;
+}
+
+.skills-list li {
+    margin-bottom: 8px;
+}
+
+/* Article cards - Box model */
+.interest-card {
+    background-color: #eaf2fa;
+    border: 1px solid #b9cde1;
+    border-radius: 8px;
+    padding: 18px;
+    margin: 15px 0;
+}
+
+/* Goals list */
+ol li {
+    padding: 5px;
+    margin-bottom: 8px;
+}
+
+/* Contact button */
+.contact-button {
+    display: inline-block;
+    background-color: #142d4e;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border: 2px solid #ffac33;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.contact-button:hover {
+    background-color: #ffac33;
+    color: #142d4e;
+}
+
+/* ID Selector - Contact Section */
+#contact {
+    background-color: #fff7eb;
+    border-left: 5px solid #142d4e;
+}
+
+/* Footer */
+footer {
+    background-color: #142d4e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    border-top: 4px solid #ffac33;
+}
