@@ -1,23 +1,75 @@
 
-/* Homework 3 - Responsive Layout */
+/* ========================================
+   PERSONAL PORTFOLIO
+   Milestone 2 + Homework 2
+   Responsive CSS
+======================================== */
 
-/* Prevent horizontal scrolling */
-html, body {
-  width: 100%;
-  margin: 0;
+/* Colors and Spacing */
+:root {
+  --navy: #17324d;
+  --teal: #147d80;
+  --light: #eff5f8;
+  --white: #ffffff;
+  --text: #263746;
+  --border: #cbd9e2;
 }
 
+/* General Styling */
 * {
   box-sizing: border-box;
 }
 
+html {
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 0;
+  font-family: "Open Sans", Arial, sans-serif;
+  color: var(--text);
+  background-color: var(--light);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: "Poppins", Arial, sans-serif;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+a {
+  color: var(--teal);
+}
+
 img {
+  display: block;
   max-width: 100%;
   height: auto;
 }
 
-/* Flexbox Navigation */
+/* Header and Navigation */
+header {
+  background-color: var(--navy);
+  color: var(--white);
+  padding: 16px 24px;
+}
+
 nav {
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,53 +77,222 @@ nav {
   gap: 16px;
 }
 
+.logo {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+
 nav ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* CSS Grid Multi-Column Layout */
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: #73e0df;
+}
+
+/* Main Content */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.container p {
+  overflow-wrap: break-word;
+}
+
+/* Hero Section */
+.hero {
+  background-color: var(--navy);
+  color: var(--white);
+  text-align: center;
+  padding: 64px 24px;
+}
+
+.hero h1 {
+  margin-top: 0;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 16px auto 24px;
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  background-color: var(--teal);
+  color: var(--white);
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+
+.button:hover,
+.button:focus-visible {
+  background-color: #0e6063;
+}
+
+a:focus-visible {
+  outline: 3px solid #f7bf4f;
+  outline-offset: 3px;
+}
+
+/* CSS Grid - Three Column Layout */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
+  margin-top: 24px;
 }
 
+/* Project Cards */
 .card {
-  min-width: 0;
+  background-color: var(--white);
   padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  min-width: 0;
   overflow-wrap: anywhere;
 }
 
-/* Tablet - 768px */
+.card h3 {
+  color: var(--navy);
+  margin-top: 0;
+}
+
+/* ID Selector - Career Goals */
+#about-me {
+  background-color: var(--white);
+  border-radius: 8px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 32px;
+}
+
+/* ID Selector - Contact Section */
+#contact {
+  background-color: var(--white);
+  border-left: 8px solid var(--teal);
+  border-radius: 8px;
+  padding: 32px;
+  margin-top: 24px;
+}
+
+/* Footer */
+footer {
+  background-color: var(--navy);
+  color: var(--white);
+  text-align: center;
+  padding: 24px;
+  margin-top: 32px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ========================================
+   TABLET - 900px AND BELOW
+======================================== */
 @media (max-width: 900px) {
+
   .project-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .hero {
+    padding: 48px 24px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  nav {
+    justify-content: center;
+  }
 }
 
-/* Mobile - 320px */
+/* ========================================
+   MOBILE - 480px AND BELOW
+======================================== */
 @media (max-width: 480px) {
+
+  header {
+    padding: 16px;
+  }
+
   nav {
     flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 
   nav ul {
-    justify-content: center;
-    padding: 0;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
   }
 
   .container {
     padding: 24px 16px;
   }
 
+  .hero {
+    padding: 40px 16px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
   .card {
     padding: 16px;
+  }
+
+  #about-me {
+    padding: 24px 16px;
+  }
+
+  #contact {
+    padding: 24px 16px;
+  }
+
+  .button {
+    max-width: 100%;
   }
 }
