@@ -4,79 +4,186 @@
 
 <head>
   <meta charset="UTF-8">
+
+  <!-- Responsive Viewport -->
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-  <title>Projects | Personal Portfolio</title>
+  <!-- Accessible Page Title -->
+  <title>My Projects | Personal Portfolio</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect"
         href="https://fonts.googleapis.com">
+
   <link rel="preconnect"
         href="https://fonts.gstatic.com"
         crossorigin>
+
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700&display=swap"
     rel="stylesheet">
 
-  <!-- CSS Stylesheet -->
+  <!-- External CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- Navigation -->
+  <!-- Header and Navigation -->
   <header>
-    <nav>
+    <nav aria-label="Main navigation">
+
       <div class="logo">My Portfolio</div>
 
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="about.html">About & Contact</a></li>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="projects.html" aria-current="page">
+            Projects
+          </a>
+        </li>
+
+        <li>
+          <a href="about.html">About & Contact</a>
+        </li>
       </ul>
+
     </nav>
   </header>
 
-  <main class="container">
+  <!-- Main Content -->
+  <main id="main-content" class="container">
 
     <h1>My Projects</h1>
+
     <p>
       Here are some of the projects and skills
       I'm working on while learning more
       about web development and IT.
     </p>
 
-    <!-- Responsive Grid -->
-    <section class="project-grid">
+    <!-- Responsive CSS Grid -->
+    <section aria-labelledby="projects-heading">
 
-      <article class="card">
-        <h2>Personal Portfolio</h2>
-        <p>
-          I created this website using HTML and CSS
-          to practice building responsive websites
-          that work on different screen sizes.
-        </p>
-      </article>
+      <h2 id="projects-heading">
+        Projects and Skills
+      </h2>
 
-      <article class="card">
-        <h2>HTML Practice</h2>
-        <p>
-          I practiced using headings, images,
-          links, lists, and semantic HTML elements
-          to organize a webpage.
-        </p>
-      </article>
+      <div class="project-grid">
 
-      <article class="card">
-        <h2>Future Projects</h2>
-        <p>
-          I plan to continue learning JavaScript,
-          networking, and other technologies
-          as I improve my technical skills.
-        </p>
-      </article>
+        <!-- Project 1 -->
+        <article class="card">
+          <h3>Personal Portfolio Website</h3>
 
+          <p>
+            I created this website using HTML and CSS
+            to practice building responsive websites
+            that work on different screen sizes.
+          </p>
+
+          <p>
+            I also learned how to organize my pages,
+            connect my stylesheet, and publish
+            my website using GitHub Pages.
+          </p>
+
+          <a href="index.html">
+            View My Portfolio
+          </a>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card">
+          <h3>HTML Practice</h3>
+
+          <p>
+            I practiced using headings, images,
+            links, lists, and semantic HTML elements
+            to organize a webpage.
+          </p>
+
+          <p>
+            This helped me understand how websites
+            are structured and how different HTML
+            elements work together.
+          </p>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card">
+          <h3>Responsive Web Design</h3>
+
+          <p>
+            I used CSS Grid, Flexbox, and media
+            queries to make my website work
+            on mobile phones, tablets,
+            and desktop computers.
+          </p>
+
+          <p>
+            I also practiced using a consistent
+            color palette, Google Fonts,
+            and spacing throughout my website.
+          </p>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="card">
+          <h3>Information Technology</h3>
+
+          <p>
+            I'm continuing to learn more about
+            computers, networking, and different
+            IT systems.
+          </p>
+
+          <p>
+            My goal is to build my knowledge
+            and prepare for future opportunities
+            in the technology field.
+          </p>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="card">
+          <h3>Web Accessibility</h3>
+
+          <p>
+            I'm learning how to make websites
+            easier for everyone to use,
+            including people with disabilities.
+          </p>
+
+          <p>
+            This includes using proper headings,
+            descriptive links, readable colors,
+            and accessibility testing tools
+            like WAVE.
+          </p>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="card">
+          <h3>Future Projects</h3>
+
+          <p>
+            I plan to continue learning JavaScript
+            and other technologies as I improve
+            my web development skills.
+          </p>
+
+          <p>
+            I want to work on more projects
+            that will help me gain experience
+            and prepare for my career.
+          </p>
+        </article>
+
+      </div>
     </section>
 
   </main>
