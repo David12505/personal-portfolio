@@ -3,54 +3,241 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Personal Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>About & Contact | Personal Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
+
   <header>
-    <nav>
+    <nav aria-label="Main navigation">
       <div class="logo">My Portfolio</div>
+
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="projects.html">Projects</a></li>
-        <li><a href="about.html">About & Contact</a></li>
+        <li>
+          <a href="about.html" aria-current="page">
+            About & Contact
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
 
-  <main class="container">
+  <main id="main-content" class="container">
     <h1>About Me</h1>
 
     <section id="about-me">
       <h2>My Background</h2>
-      <p>I'm currently a college student working toward
-      my degree. I'm interested in technology, IT,
-      and learning how to develop websites.</p>
+      <p>
+        I'm currently a college student working
+        toward my degree. I'm interested in IT,
+        networking, and web development.
+      </p>
 
       <h2>My Goals</h2>
-      <p>My goal is to continue improving my technical
-      skills, finish my degree, and find better
-      opportunities in the technology field.</p>
+      <p>
+        My goal is to continue improving my
+        technical skills, finish my degree,
+        and find opportunities in technology.
+      </p>
     </section>
 
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <p>You can view my projects and follow my
-      progress on GitHub.</p>
-      <a class="button"
-         href="https://github.com/David12505">
-        Visit My GitHub
-      </a>
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact Me</h2>
+
+      <p>
+        You can also view my projects on
+        <a href="https://github.com/David12505">
+          my GitHub profile
+        </a>.
+      </p>
+
+      <h3>Contact Form</h3>
+      <p>
+        Fill out the form below to check your
+        information. This demo does not send messages.
+      </p>
+
+      <form id="contact-form" novalidate>
+        <fieldset>
+          <legend>Your Contact Information</legend>
+
+          <div class="form-group">
+            <label for="full-name">
+              Full Name (required)
+            </label>
+            <input
+              type="text"
+              id="full-name"
+              name="fullName"
+              autocomplete="name"
+              required
+              aria-describedby="name-error">
+            <p id="name-error"
+               class="error-message" hidden></p>
+          </div>
+
+          <div class="form-group">
+            <label for="email">
+              Email Address (required)
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+              aria-describedby="email-error">
+            <p id="email-error"
+               class="error-message" hidden></p>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Your Message</legend>
+
+          <div class="form-group">
+            <label for="subject">
+              Subject (required)
+            </label>
+            <select id="subject"
+                    name="subject"
+                    required
+                    aria-describedby="subject-error">
+              <option value="">Select a subject</option>
+              <option value="project">Project Question</option>
+              <option value="school">School</option>
+              <option value="other">Other</option>
+            </select>
+            <p id="subject-error"
+               class="error-message" hidden></p>
+          </div>
+
+          <div class="form-group">
+            <label for="message">
+              Message (required)
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              aria-describedby="message-error"></textarea>
+            <p id="message-error"
+               class="error-message" hidden></p>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="button">
+          Check My Message
+        </button>
+
+        <p id="form-status"
+           class="form-status"
+           role="status"
+           aria-live="polite"></p>
+      </form>
     </section>
   </main>
 
   <footer>
     <p>Personal Portfolio | 2026</p>
   </footer>
+
+  <script>
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+
+    const fields = [
+      document.getElementById("full-name"),
+      document.getElementById("email"),
+      document.getElementById("subject"),
+      document.getElementById("message")
+    ];
+
+    function validateField(field) {
+      const error = document.getElementById(
+        field.id + "-error"
+      );
+
+      let message = "";
+
+      if (!field.value.trim()) {
+        message = "This field is required.";
+      } else if (
+        field.type === "email" &&
+        !field.validity.valid
+      ) {
+        message = "Enter a valid email address.";
+      }
+
+      error.textContent = message;
+      error.hidden = !message;
+
+      if (message) {
+        field.setAttribute("aria-invalid", "true");
+      } else {
+        field.removeAttribute("aria-invalid");
+      }
+
+      return !message;
+    }
+
+    fields.forEach(function(field) {
+      field.addEventListener("input", function() {
+        if (field.hasAttribute("aria-invalid")) {
+          validateField(field);
+        }
+      });
+
+      field.addEventListener("change", function() {
+        if (field.hasAttribute("aria-invalid")) {
+          validateField(field);
+        }
+      });
+    });
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      status.textContent = "";
+      let firstInvalid = null;
+
+      fields.forEach(function(field) {
+        if (!validateField(field) && !firstInvalid) {
+          firstInvalid = field;
+        }
+      });
+
+      if (firstInvalid) {
+        status.textContent =
+          "Please correct the highlighted fields.";
+        firstInvalid.focus();
+        return;
+      }
+
+      status.textContent =
+        "Your information looks good. " +
+        "This is a demonstration form, " +
+        "so no message has been sent.";
+    });
+  </script>
 </body>
 </html>
-  
